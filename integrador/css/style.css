@@ -1,0 +1,28 @@
+@import 'Header.css';
+@import 'Sidenav.css';
+@import 'Main.css';
+
+body{
+    border: 15px solid #fff;
+    display: grid;
+    grid-template-columns: 405px 1fr;
+    grid-template-rows: 130px 884px;
+    grid-template-areas: 
+    'header header'
+    'sidenav main';
+              
+}
+
+/* body{
+    border: 25px solid #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    'header header'
+    'sidenav main';
+   
+              
+} */
+
+

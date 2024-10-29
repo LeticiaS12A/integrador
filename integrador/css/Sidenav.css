@@ -1,0 +1,21 @@
+nav{
+    grid-area: sidenav;
+    display: flex;
+    background-color: #edf9eb;
+    width: 405px;
+    height: 884px; 
+    justify-content: center;
+}
+
+.add-relatorio{
+     display: flex;
+     width: 280px;
+     height: 40px;
+     background-color: #C8e1c4;
+     font-family: 'Inter';
+     font-size: 20px;
+     font-weight: 700;
+     align-items: center;
+     justify-content: center;
+     margin-top: 30px;
+}
