@@ -1,6 +1,7 @@
 @import 'Header.css';
 @import 'Sidenav.css';
 @import 'Main.css';
+@import 'Main2.css';
 
 body{
     border: 15px solid #fff;
@@ -9,6 +10,7 @@ body{
     grid-template-rows: 130px 884px;
     grid-template-areas: 
     'header header'
+    'sidenav main'
     'sidenav main';
               
 }

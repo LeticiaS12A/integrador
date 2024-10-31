@@ -5,6 +5,7 @@ nav{
     width: 405px;
     height: 884px; 
     justify-content: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 8, 20%);
 }
 
 .add-relatorio{

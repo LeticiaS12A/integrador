@@ -4,8 +4,7 @@ header{
     width: 1850px;
     height: 110px;
     background-color: #edf9eb;
-    
-    align-items: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 8, 20%);
 }
 
 .logo{
@@ -16,10 +15,12 @@ header{
 }
 
 .titulo-logo{
+    display: flex;
     font-size: 60px;
     font-family: inria serif;
     color: black;
     justify-content: center;
+    align-items: center;
 }
 
 .complemento{
