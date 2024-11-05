@@ -2,8 +2,8 @@ main{
     display: flex;
     grid-area: main;
     background-color:#edf9eb;
-    width: 1405px;
-    height: 884px;
+    /* width: 1405px;
+    height: 100%; */
     margin-left: 42px;
     box-shadow: 4px 4px 10px rgba(0, 0, 8, 20%);
 }
@@ -45,6 +45,27 @@ main{
     font-weight: 600;;
 }
 
+.save{
+    height: 60px;
+    width: 60px;
+}
+
+.save-img{
+    height: 40px;
+    width: 40px;
+}
+
+.sobre-ralatorio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 30px;
+}
+
+.textarea{
+    margin-bottom: 20px;
+}
+
 .digite-aqui{
     display: flex;
     justify-content: start;
@@ -60,4 +81,5 @@ main{
     color: #000000;
     background-color: #fff;
     text-align: start;
+    resize: vertical;
 }

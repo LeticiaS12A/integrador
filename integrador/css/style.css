@@ -7,13 +7,17 @@ body{
     border: 15px solid #fff;
     display: grid;
     grid-template-columns: 405px 1fr;
-    grid-template-rows: 130px 884px;
+    grid-template-rows: 100px 884px;
     grid-template-areas: 
     'header header'
     'sidenav main'
     'sidenav main';
-              
+    gap: 16px;
+    
+    
 }
+
+
 
 /* body{
     border: 25px solid #fff;
@@ -26,5 +30,3 @@ body{
    
               
 } */
-
-
