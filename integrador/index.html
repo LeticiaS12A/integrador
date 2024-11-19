@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Relata Fácil</title>
+</head>
+<body>
+    
+    <header>
+        <div class="complemento">
+            <img class="logo" src="img/documento.svg" alt="icone adicionar documento">
+            <p class="titulo-logo">Relata Fácil</p>
+        </div>
+    </header>
+
+    <nav>
+        <button class="add-relatorio" id="addRelatorioButton">
+            <p>+ Adicionar Relatório</p>
+        </button>
+    </nav>
+
+    <main class="main1">
+        <div id="form-container" class="form-container" style="display: none;">
+            <div class="row-register-file">
+                <input class="info-relatorio" id="nomeCriador" placeholder="Nome do Criador do Relatório">
+                <input class="info-relatorio" id="nomeSetor" placeholder="Nome do Setor">
+                <input class="info-relatorio" id="nomeRelatorio" placeholder="Nome do Relatório">
+            </div>
+            <div class="sobre-relatorio">
+                <p class="nome-relatorio" id="nomeRelatorioDisplay">Projeto Teste</p>
+                <button class="save" id="saveRelatorioButton">
+                    <img class="save-img" src="img/disco.svg" alt="button de salvar">
+                </button>
+            </div>
+            <div class="textarea">
+                <textarea class="digite-aqui" id="textoRelatorio" placeholder="Digite aqui..."></textarea>
+            </div>
+            <div class="imagem">
+                <input type="file" id="imagemRelatorio" accept="image/*">
+                <img id="previewImage" src="" alt="Preview da imagem" style="max-width: 100px; display: none;">
+            </div>
+        </div>
+
+        <!-- Exibição dos Relatórios -->
+        <div id="relatoriosList" class="relatorios-list"></div>
+    </main>
+
+    <script>
+        // Define o modelo do relatório
+        class Relatorio {
+            constructor(nomeCriador, nomeSetor, nomeRelatorio, texto, imagem) {
+                this.id = new Date().getTime();  // Usando o timestamp como ID único
+                this.nomeCriador = nomeCriador;
+                this.nomeSetor = nomeSetor;
+                this.nomeRelatorio = nomeRelatorio;
+                this.texto = texto;
+                this.imagem = imagem; // Aqui armazena a imagem
+            }
+
+            exibirRelatorio() {
+                return `
+                    <div class="relatorio-item" id="relatorio-${this.id}">
+                        <h3>${this.nomeRelatorio}</h3>
+                        <p><strong>Criado por:</strong> ${this.nomeCriador}</p>
+                        <p><strong>Setor:</strong> ${this.nomeSetor}</p>
+                        <p><strong>Texto:</strong> ${this.texto}</p>
+                        ${this.imagem ? `<img src="${this.imagem}" alt="Imagem do Relatório" style="max-width: 200px;">` : ''}
+                        <button class="edit" onclick="editarRelatorio(${this.id})">Editar</button>
+                        <button class="delete" onclick="deletarRelatorio(${this.id})">Deletar</button>
+                    </div>
+                `;
+            }
+        }
+
+        // Função para abrir o formulário
+        document.getElementById("addRelatorioButton").addEventListener("click", function() {
+            document.getElementById("form-container").style.display = "block";  // Exibe o formulário
+        });
+
+        // Função para salvar o relatório
+        document.getElementById("saveRelatorioButton").addEventListener("click", function() {
+            const nomeCriador = document.getElementById("nomeCriador").value;
+            const nomeSetor = document.getElementById("nomeSetor").value;
+            const nomeRelatorio = document.getElementById("nomeRelatorio").value;
+            const textoRelatorio = document.getElementById("textoRelatorio").value;
+            const imagemRelatorio = document.getElementById("imagemRelatorio").files[0];
+
+            // Validação dos campos
+            if (!nomeCriador || !nomeSetor || !nomeRelatorio || !textoRelatorio) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            let imagemUrl = '';
+            if (imagemRelatorio) {
+                const reader = new FileReader();
+                reader.onloadend = function () {
+                    imagemUrl = reader.result;
+                    // Criação de um novo relatório com a imagem
+                    const novoRelatorio = new Relatorio(nomeCriador, nomeSetor, nomeRelatorio, textoRelatorio, imagemUrl);
+
+                    // Exibe o relatório na página
+                    const relatoriosList = document.getElementById("relatoriosList");
+                    relatoriosList.innerHTML += novoRelatorio.exibirRelatorio();
+
+                    // Limpa os campos do formulário
+                    document.getElementById("nomeCriador").value = '';
+                    document.getElementById("nomeSetor").value = '';
+                    document.getElementById("nomeRelatorio").value = '';
+                    document.getElementById("textoRelatorio").value = '';
+                    document.getElementById("imagemRelatorio").value = '';
+                    document.getElementById("previewImage").style.display = "none";
+
+                    // Esconde o formulário
+                    document.getElementById("form-container").style.display = "none";
+                }
+                reader.readAsDataURL(imagemRelatorio);
+            } else {
+                // Criação do relatório sem imagem
+                const novoRelatorio = new Relatorio(nomeCriador, nomeSetor, nomeRelatorio, textoRelatorio, '');
+
+                // Exibe o relatório na página
+                const relatoriosList = document.getElementById("relatoriosList");
+                relatoriosList.innerHTML += novoRelatorio.exibirRelatorio();
+
+                // Limpa os campos do formulário
+                document.getElementById("nomeCriador").value = '';
+                document.getElementById("nomeSetor").value = '';
+                document.getElementById("nomeRelatorio").value = '';
+                document.getElementById("textoRelatorio").value = '';
+                document.getElementById("imagemRelatorio").value = '';
+                document.getElementById("previewImage").style.display = "none";
+
+                // Esconde o formulário
+                document.getElementById("form-container").style.display = "none";
+            }
+        });
+
+        // Função para editar o relatório
+        function editarRelatorio(id) {
+            const relatorio = document.getElementById(`relatorio-${id}`);
+            const nomeRelatorio = relatorio.querySelector('h3').textContent;
+            const nomeCriador = relatorio.querySelector('p').textContent.split(":")[1].trim();
+            const nomeSetor = relatorio.querySelector('p').nextElementSibling.textContent.split(":")[1].trim();
+            const texto = relatorio.querySelector('p').nextElementSibling.nextElementSibling.textContent.split(":")[1].trim();
+            const imagem = relatorio.querySelector('img') ? relatorio.querySelector('img').src : '';
+
+            // Preenche os campos do formulário com os dados do relatório
+            document.getElementById("nomeCriador").value = nomeCriador;
+            document.getElementById("nomeSetor").value = nomeSetor;
+            document.getElementById("nomeRelatorio").value = nomeRelatorio;
+            document.getElementById("textoRelatorio").value = texto;
+
+            if (imagem) {
+                document.getElementById("previewImage").src = imagem;
+                document.getElementById("previewImage").style.display = "block";
+            }
+
+            // Esconde o formulário
+            document.getElementById("form-container").style.display = "block";
+        }
+
+        // Função para deletar o relatório
+        function deletarRelatorio(id) {
+            const relatorio = document.getElementById(`relatorio-${id}`);
+            relatorio.remove(); // Remove o relatório da página
+        }
+
+        // Visualizar a imagem antes de enviar
+        document.getElementById("imagemRelatorio").addEventListener("change", function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    document.getElementById("previewImage").src = event.target.result;
+                    document.getElementById("previewImage").style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>
