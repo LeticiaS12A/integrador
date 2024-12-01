@@ -1,0 +1,44 @@
+#relatorioList{
+		     width: 98%;
+		     height: 60px;
+		     background-color: #C8e1c4;
+		     align-items: center;
+		     justify-content: center;
+		     margin-top: 30px;
+
+			 padding: auto;
+		
+}
+
+#imglist{
+	grid-area: imagem;
+	display: flex;
+    margin-left: 90%;
+	width: 32px;
+    height: 32px;
+
+}
+
+.nomeReList{
+	grid-area: nome;
+	font-size: 15px;
+	color:crimson;
+}
+
+.img-delete{
+	grid-area: botoes;
+	display: flex;
+	background-color: rgba(red, green, blue, 0);
+	border: none;
+    width: 14px;
+    height: 14px;
+}
+
+.img-edit{
+	grid-area: botoes;
+	display: flex;
+	background-color: rgba(red, green, blue, none);
+	border: none;
+    width: 14px;
+    height: 14px;
+}
