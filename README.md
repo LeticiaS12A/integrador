@@ -1,13 +1,12 @@
-<h1 align="center">Olá 👋, eu sou a Leticia</h1>
-- 🔭 Atualmente estou trabalhando em [Relata Fácil](https://github.com/LeticiaS12A/integrador.git)
+<h1 align="center">Olá 👋, eu nos somos representante da Relata Fácil: Leticia dos Santos Alves e Alessandra dos Santos Lima</h1>
+- 🔭 Atualmente estamos trabalhando em [Relata Fácil](https://github.com/LeticiaS12A/integrador.git)
 
-- 🌱 Atualmente estou aprendendo **Desenvolvimento de sistemas em java**
+- 🌱 Atualmente estamos aprendendo **Desenvolvimento de sistemas em java**
 
-- 👨‍💻 Todos os meus projetos estão disponíveis em [LeticiaS12A](LeticiaS12A)
+- 👨‍💻 Todos os meus projetos estão disponíveis em [LeticiaS12A e Alessandra108](LeticiaS12A)
 
-- 📫 Como entrar em contato comigo **leticia11ldsa07@gmail.com**
-
-- ⚡ Curiosidade **Eu desenho faço artesanato e nos meus tempos livres.**
+- 📫 Como entrar em contato comigo **leticia11ldsa07@gmail.com e alessandra10876@gmail.com**
+  
 
 <h3 align="left">Conecte-se comigo:</h3>
 <p align="left">
