@@ -7,7 +7,7 @@
 
 - 📫 Como entrar em contato comigo **leticia11ldsa07@gmail.com**
 
-- ⚡ Curiosidade **Eu desenho faço artesanato e vivo nos meus tempos livres.**
+- ⚡ Curiosidade **Eu desenho faço artesanato e nos meus tempos livres.**
 
 <h3 align="left">Conecte-se comigo:</h3>
 <p align="left">
