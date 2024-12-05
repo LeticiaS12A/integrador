@@ -1,0 +1,86 @@
+nav{
+    grid-area: sidenav;
+    width: 100%;
+    height: 100%; 
+	 
+}
+
+/* Contêiner do Relatório */
+.relatorio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #EDF9EB; /* Fundo verde claro */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.relatorio-container:hover {
+    transform: scale(1.02);
+    background-color: #e0f2e9; /* Fundo mais claro no hover */
+}
+
+/* Nome do Relatório */
+.nomeReList {
+    font-size: 1rem;
+    font-weight: -1;
+    color: #333;
+    flex: 1; /* Ocupa o espaço restante */
+}
+
+/* Contêiner da Imagem e Botões */
+.imagem-e-botoes {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: center;
+    gap: 10px;
+}
+
+/* Imagem do Relatório */
+.imagem-e-botoes img#imglist {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+    background-color: #ddd; /* Cor de fundo se a imagem não carregar */
+}
+
+/* Botões */
+.botoes-container {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    align-items: center;
+    gap: 14px; /* Espaçamento uniforme entre os botões */
+}
+
+/* Links que funcionam como botões */
+.botoes-container a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; /* Remove fundo extra */
+    border: none;
+    padding: 0; /* Remove espaçamento interno */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.botoes-container a:hover {
+    transform: scale(0.9); /* Aumenta ligeiramente o botão no hover */
+}
+
+/* Imagens dentro dos botões */
+.botoes-container img {
+    width: 18px; /* Tamanho da imagem define o tamanho do botão */
+    height: 18px;
+    object-fit: contain;
+}
+
+/* Alinhamento específico da imagem de deletar */
+.botoes-container img.img-delete {
+    margin: 0; /* Remove margens */
+    align-self: center; /* Garante alinhamento no centro */
+}

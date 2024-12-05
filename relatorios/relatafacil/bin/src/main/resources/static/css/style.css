@@ -1,0 +1,220 @@
+@import 'Header.css';
+@import 'Sidenav.css';
+@import 'Main.css';
+@import 'laptop.css';
+@import 'laptopLarge.css';
+@import 'talet.css';
+@import 'mobile.css';
+@import 'javascript.css';
+
+*{
+    margin: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 25% 73%;
+    grid-template-rows: 0.7fr 9fr;
+    grid-template-areas: 
+    'header header'
+    'sidenav main';
+    gap: 1%;
+    padding: 1%;
+    
+}
+
+
+
+@media ( max-width:425px){
+    
+    body{
+        display: grid;
+        grid-template-columns: 25% 73%;
+        grid-template-rows: 0.2fr 9fr 9fr;
+        grid-template-areas: 
+        'header header'
+        'main main'
+        'sidenav sidenav';
+        gap: 1%;
+        padding: 1%;
+        
+    }
+
+    .lista{
+	
+        width: 88%;
+        height: 96%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        
+        margin-right: 2%;
+        margin-left: 4%;
+        padding: 2%;
+    
+    }
+    
+    
+    #imglist{
+        grid-area: imagem;
+        display: flex;
+        margin-left: 85%;
+        margin-top: -20px;
+        width: 52px;
+        height: 52px;
+    
+    }
+    
+    .nomeReList{
+        grid-area: nome;
+        font-size: 30px;
+        color:rgb(0, 0, 0);
+        width: 150px;
+        flex-wrap: wrap;
+        font-weight: 1;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    
+    .img-delete{
+        grid-area: botoes;
+        display: flex;
+        background-color: rgba(red, green, blue, 0);
+        margin-left: 93%;
+        margin-top: -18px;
+        margin-bottom: 30px;
+        border: none;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .img-edit{
+        grid-area: botoes;
+        display: flex;
+        background-color: rgba(red, green, blue, none);
+        border: none;
+        margin-left: 80%;
+        margin-top: 4px;
+        width: 24px;
+        height: 24px;
+    }
+
+    
+}
+
+
+
+
+/* Estilo para o Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1; /* Fica acima do conteúdo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Fundo semitransparente */
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.info-modal{
+		margin-top: 10px;
+	    margin-left: 10px;
+	    height: 30px;
+	    width: 275px;
+	    font-family: 'Inter';
+	    font-weight: 600;
+	    font-size: 15px;
+	    border: none;
+		border-radius: 5px;
+	    background: #edf9eb;
+	    border-bottom: 2px solid #edf9eb;
+}
+
+.digite-aqui-modal{
+    display: flex;
+	margin-top: 10px;
+    justify-content: start;
+    align-items: start;
+    height: 500px;
+    width: 75%;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: #000000;
+    background-color: #fff;
+    text-align: start;
+    resize: vertical;
+}
+
+.save-modal{
+	    display: flex;
+		height: 33px;
+	    width: 33px;
+		margin-top: 15px;
+	    background-color: #edf9eb;
+	    border-radius: 10px;
+	    border-color: #edf9eb;
+	    justify-content: center;
+	    align-items: center;
+}
+
+.modal-content {
+
+	background-color: #C8E1C4;
+    margin: 5% auto;
+    padding: 20px;
+    border: none;
+	border-radius: 15px;
+    width: 80%; /* Largura do modal */
+    max-width: 900px;
+	height: 700px;
+	box-shadow: 4px 4px 10px rgba(0, 0, 8, 20%);
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* body{
+    border: 25px solid #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    'header header'
+    'sidenav main';
+   
+              
+} */
+
+
+/* editar relatório */
+
+form{
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+input, button{
+padding: 7px;
+font-size: 13px;
+}
+
+li{
+list-style-type: none;
+}
